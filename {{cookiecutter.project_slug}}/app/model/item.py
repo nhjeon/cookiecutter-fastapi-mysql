@@ -15,7 +15,7 @@ class ItemUpdate(ItemBase):
     name: str
 
 
-class ItemBase(ItemBase):
+class Item(ItemBase):
     id: str
     name: str
     create_time: datetime
