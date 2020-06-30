@@ -13,6 +13,7 @@ def read_items(db: Session):
 def create_item(item_create: ItemCreate, db: Session):
     item = ItemDB(name=item_create.name, create_time=item_create.create_time)
     db.add(item)
+    db.commit()
     return item
 
 
@@ -27,6 +28,7 @@ def update_item(item_id: int, item_update: ItemUpdate, db: Session):
         if field in update_data:
             setattr(item, field, update_data[field])
     db.add(item)
+    db.commit()
     return item
 
 def delete_item(item_id: int,  db: Session):
@@ -35,6 +37,7 @@ def delete_item(item_id: int,  db: Session):
         raise HTTPException(404)
 
     db.delete(item)
+    db.commit()
     return item
 
 
