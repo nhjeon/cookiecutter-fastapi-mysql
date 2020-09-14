@@ -16,6 +16,7 @@ email-validator = "*"
 uvicorn = "*"
 sqlalchemy = "*"
 mysqlclient = "*"
+mysql-connector = "*"
 
 [requires]
 python_version = "3.7"
