@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-&nbsp;[![Python Version: 3.7.4](https://badgen.net/badge/python/3.7.4/blue)](https://docs.python.org/3.7.4/)
+&nbsp;[![Python Version: 3.9.1](https://badgen.net/badge/python/3.9.1/blue)](https://docs.python.org/3.7.4/)
 
 &nbsp;[![Code Style: Black](https://badgen.net/badge/code%20style/black/black)](https://github.com/ambv/black)
 
@@ -25,22 +25,17 @@ $ make test
 ## Run
 
 ``` sh
-PYTHONPATH=./app uvicorn main:app --reload
-or
 make run
-or
-python run.py
 ```
 
 ## Docker
 
 ```
-make requirements
 docker build -t myimage .
 docker run -d --name mycontainer -p 80:80 myimage
 ```
 
-## Docker in local
+## Hot Reloading with Local Docker Development
 
 ```
 docker build -t myimage -f Dockerfile-local .
@@ -52,7 +47,7 @@ docker run -d --name mycontainer -p 80:80 -v $(PWD)/app:/app myimage
 
 <!-- TODO: Describe stack of this project -->
 
-* [Pipenv](https://github.com/pypa/pipenv)
+* [Poetry](https://python-poetry.org/)
 * FastAPI
 * uvicorn
 * sqlalchemy
