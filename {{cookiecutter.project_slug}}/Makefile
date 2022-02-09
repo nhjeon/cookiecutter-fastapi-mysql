@@ -3,12 +3,10 @@ init:
 	pipenv run pipenv install --dev
 
 check:
-	isort -rc --check-only app
 	black -S -l 79 --check app
 	pylint app
 
 format:
-	isort -rc -y app
 	black -S -l 79 app
 
 run:
