@@ -31,7 +31,8 @@ def update_item(item_id: int, item_update: ItemUpdate, db: Session):
     db.commit()
     return item
 
-def delete_item(item_id: int,  db: Session):
+
+def delete_item(item_id: int, db: Session):
     item: ItemDB = db.query(ItemDB).filter(ItemDB.id == item_id).first()
     if not item:
         raise HTTPException(404)
